@@ -1,0 +1,377 @@
+:root {
+  --ink: #e8ecf1;
+  --paper: #0b1120;
+  --accent: #38a3d9;
+  --accent-light: #5bb8e8;
+  --muted: #8893a7;
+  --border: #1c2a42;
+  --card-bg: #111d33;
+  --badge-bg: #162740;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent-light);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Navigation */
+nav {
+  border-bottom: 1px solid var(--border);
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+nav .nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+nav .logo:hover {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+nav .links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+}
+
+nav .links a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+nav .links a:hover {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* Main content */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.effective-date {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--ink);
+}
+
+h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+ul, ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+li strong {
+  color: var(--ink);
+}
+
+/* Hero (landing page) */
+.hero {
+  text-align: center;
+  padding: 6rem 2rem 5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  color: var(--muted);
+  max-width: 540px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.hero-cta:hover {
+  background: var(--accent-light);
+  color: #fff;
+  text-decoration: none;
+}
+
+.badges {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.badges a img {
+  height: 48px;
+}
+
+.coming-soon {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Features section */
+.features {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: border-color 0.2s;
+}
+
+.feature:hover {
+  border-color: var(--accent);
+}
+
+.feature h3 {
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.feature p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Section label (like Novino's section headings) */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 2.5rem;
+}
+
+/* Support page */
+.contact-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.contact-card p {
+  color: var(--muted);
+}
+
+.contact-card a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.contact-card a:hover {
+  color: var(--accent-light);
+}
+
+.contact-card .response-time {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
+
+footer .footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+footer .footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+footer .footer-links a {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer .footer-links a:hover {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+footer .footer-copy {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav {
+    padding: 1.25rem;
+  }
+
+  .container {
+    padding: 2rem 1.25rem 3rem;
+  }
+
+  .hero {
+    padding: 4rem 1.25rem 3rem;
+  }
+
+  .features {
+    padding: 0 1.25rem 3rem;
+    grid-template-columns: 1fr;
+  }
+
+  footer .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .footer-links {
+    justify-content: center;
+  }
+}
