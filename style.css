@@ -164,6 +164,12 @@ li strong {
   margin: 0 auto 1.5rem;
 }
 
+.hero .pronunciation {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: -0.75rem auto 1.5rem;
+}
+
 .hero p {
   font-size: 1.125rem;
   color: var(--muted);
