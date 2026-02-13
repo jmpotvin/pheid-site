@@ -65,6 +65,12 @@ nav .logo:hover {
   text-decoration: none;
 }
 
+.logo-pronunciation {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
 nav .links {
   display: flex;
   gap: 1.5rem;
