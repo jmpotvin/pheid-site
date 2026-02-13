@@ -66,9 +66,10 @@ nav .logo:hover {
 }
 
 .logo-pronunciation {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 400;
   color: var(--muted);
+  opacity: 0.6;
 }
 
 nav .links {
