@@ -334,6 +334,16 @@ footer .footer-copy {
   color: var(--muted);
 }
 
+footer .footer-copy a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer .footer-copy a:hover {
+  color: var(--ink);
+}
+
 /* Animations */
 .fade-up {
   opacity: 0;
