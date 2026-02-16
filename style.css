@@ -257,9 +257,9 @@ li strong {
 
 /* Origin / name story */
 .origin {
-  max-width: 540px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 2rem 4rem;
+  padding: 2rem 2rem 4rem;
   text-align: center;
 }
 
@@ -271,7 +271,8 @@ li strong {
 }
 
 .origin p {
-  margin: 0;
+  max-width: 540px;
+  margin: 0 auto;
   font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.7;
