@@ -255,6 +255,23 @@ li strong {
   margin-bottom: 0;
 }
 
+/* Origin / name story */
+.origin {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+  text-align: center;
+}
+
+.origin p {
+  max-width: 540px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
+  font-style: italic;
+}
+
 /* Section label (like Novino's section headings) */
 .section-label {
   font-size: 0.75rem;
