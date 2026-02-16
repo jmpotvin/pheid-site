@@ -257,15 +257,21 @@ li strong {
 
 /* Origin / name story */
 .origin {
-  max-width: 900px;
+  max-width: 540px;
   margin: 0 auto;
-  padding: 2rem 2rem 4rem;
+  padding: 0 2rem 4rem;
   text-align: center;
 }
 
+.origin h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
 .origin p {
-  max-width: 540px;
-  margin: 0 auto;
+  margin: 0;
   font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.7;
