@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join on Pheid</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      text-align: center;
+      padding: 32px;
+      max-width: 400px;
+    }
+    .logo {
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+    .opening {
+      font-size: 18px;
+      color: #aaa;
+      margin-bottom: 32px;
+    }
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid #333;
+      border-top: 3px solid #00bcd4;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 32px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .fallback { display: none; }
+    .code-box {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .code-label {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+    .code-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: #00bcd4;
+      font-family: monospace;
+      letter-spacing: 1px;
+    }
+    .instructions {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .store-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .store-link {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: opacity 0.2s;
+    }
+    .store-link:hover { opacity: 0.85; }
+    .store-link.apple {
+      background: #fff;
+      color: #000;
+    }
+    .store-link.google {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">Pheid</div>
+
+    <div id="opening">
+      <div class="opening">Opening Pheid...</div>
+      <div class="spinner"></div>
+    </div>
+
+    <div id="fallback" class="fallback">
+      <div class="code-box">
+        <div class="code-label">Enter this code in the app</div>
+        <div class="code-value" id="code-display"></div>
+      </div>
+      <div class="instructions">
+        Open Pheid and tap "Subscribe with a Code", then enter the code above.
+      </div>
+      <div class="store-links">
+        <a href="#" id="apple-link" class="store-link apple">Download on the App Store</a>
+        <a href="https://play.google.com/store/apps/details?id=app.pheid" class="store-link google">Get it on Google Play</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var code = params.get('code');
+
+      if (!code) {
+        document.getElementById('opening').style.display = 'none';
+        document.getElementById('fallback').style.display = 'block';
+        document.querySelector('.code-box').style.display = 'none';
+        document.querySelector('.instructions').textContent = 'No code provided. Download Pheid to get started.';
+        return;
+      }
+
+      // Display the code in the fallback section
+      document.getElementById('code-display').textContent = code;
+
+      // Build deep link
+      var deepLink = 'app.pheid://subscribe?code=' + encodeURIComponent(code);
+
+      // Try to open the app
+      var isAndroid = /android/i.test(navigator.userAgent);
+      if (isAndroid) {
+        // Android: use intent URL for better fallback
+        window.location.href = 'intent://subscribe?code=' + encodeURIComponent(code) +
+          '#Intent;scheme=app.pheid;package=app.pheid;end';
+      } else {
+        window.location.href = deepLink;
+      }
+
+      // Track if page becomes hidden (app opened successfully)
+      var appOpened = false;
+      document.addEventListener('visibilitychange', function() {
+        if (document.hidden) appOpened = true;
+      });
+
+      // After timeout, show fallback if app didn't open
+      setTimeout(function() {
+        if (!appOpened) {
+          document.getElementById('opening').style.display = 'none';
+          document.getElementById('fallback').style.display = 'block';
+        }
+      }, 2500);
+    })();
+  </script>
+</body>
+</html>
