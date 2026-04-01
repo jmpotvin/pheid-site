@@ -368,6 +368,26 @@ footer .footer-copy a:hover {
   color: var(--ink);
 }
 
+/* Language switch */
+.lang-switch {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.lang-switch:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
 /* Animations */
 .fade-up {
   opacity: 0;

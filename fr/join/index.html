@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Join on Pheid</title>
+  <title>Rejoindre sur Pheid</title>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/icon-192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:locale" content="en_CA">
-  <meta property="og:locale:alternate" content="fr_CA">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="og:locale:alternate" content="en_CA">
   <link rel="alternate" hreflang="en" href="https://pheid.app/join/">
   <link rel="alternate" hreflang="fr" href="https://pheid.app/fr/join/">
   <link rel="alternate" hreflang="x-default" href="https://pheid.app/join/">
@@ -107,21 +107,21 @@
     <div class="logo">Pheid</div>
 
     <div id="opening">
-      <div class="opening">Opening Pheid...</div>
+      <div class="opening">Ouverture de Pheid...</div>
       <div class="spinner"></div>
     </div>
 
     <div id="fallback" class="fallback">
       <div class="code-box">
-        <div class="code-label">Enter this code in the app</div>
+        <div class="code-label">Entrez ce code dans l'application</div>
         <div class="code-value" id="code-display"></div>
       </div>
       <div class="instructions">
-        Open Pheid and tap "Subscribe with a Code", then enter the code above.
+        Ouvrez Pheid et appuyez sur « S'abonner avec un code », puis entrez le code ci-dessus.
       </div>
       <div class="store-links">
-        <a href="#" id="apple-link" class="store-link apple">Download on the App Store</a>
-        <a href="https://play.google.com/store/apps/details?id=app.pheid" class="store-link google">Get it on Google Play</a>
+        <a href="#" id="apple-link" class="store-link apple">Télécharger dans l'App Store</a>
+        <a href="https://play.google.com/store/apps/details?id=app.pheid" class="store-link google">Télécharger sur Google Play</a>
       </div>
     </div>
   </div>
@@ -135,7 +135,7 @@
         document.getElementById('opening').style.display = 'none';
         document.getElementById('fallback').style.display = 'block';
         document.querySelector('.code-box').style.display = 'none';
-        document.querySelector('.instructions').textContent = 'No code provided. Download Pheid to get started.';
+        document.querySelector('.instructions').textContent = 'Aucun code fourni. Téléchargez Pheid pour commencer.';
         return;
       }
 
