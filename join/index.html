@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Join on Pheid</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta property="og:title" content="Join on Pheid">
+  <meta property="og:description" content="One-way broadcasts from people you follow. No group chat. No replies. No noise.">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/icon-192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -20,154 +24,288 @@
       background: #0a0a0a;
       color: #e0e0e0;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 48px 20px;
     }
     .container {
-      text-align: center;
-      padding: 32px;
-      max-width: 400px;
+      max-width: 440px;
+      margin: 0 auto;
     }
     .logo {
-      font-size: 32px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 24px;
-    }
-    .opening {
-      font-size: 18px;
-      color: #aaa;
+      text-align: center;
       margin-bottom: 32px;
     }
-    .spinner {
-      width: 32px;
-      height: 32px;
-      border: 3px solid #333;
-      border-top: 3px solid #00bcd4;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 32px;
+    .logo img {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto 12px;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .fallback { display: none; }
-    .code-box {
-      background: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 24px;
+    .logo .wordmark {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
     }
-    .code-label {
-      font-size: 14px;
-      color: #888;
+    .preview-card {
+      background: #111d33;
+      border: 1px solid #1c2a42;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .channel-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+      word-break: break-word;
+    }
+    .channel-handle {
+      font-size: 15px;
+      color: #00bcd4;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      margin-bottom: 14px;
+      word-break: break-all;
+    }
+    .channel-meta {
+      font-size: 13px;
+      color: #8893a7;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .cta-box { margin-top: 24px; }
+    .cta-primary {
+      display: block;
+      text-align: center;
+      padding: 14px 20px;
+      background: #00bcd4;
+      color: #000;
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .cta-primary.dual + .cta-primary.dual {
+      background: #fff;
+    }
+    .cta-primary:hover { opacity: 0.9; text-decoration: none; color: #000; }
+    .cta-secondary {
+      display: block;
+      text-align: center;
+      font-size: 13px;
+      color: #8893a7;
+      text-decoration: none;
+      padding: 12px;
+      margin-top: 4px;
+    }
+    .cta-secondary:hover { color: #00bcd4; text-decoration: underline; }
+    .tagline {
+      text-align: center;
+      font-size: 13px;
+      color: #8893a7;
+      line-height: 1.6;
+      margin: 28px 12px 0;
+    }
+    .state-empty {
+      text-align: center;
+      padding: 32px 20px;
+    }
+    .state-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: #e8ecf1;
       margin-bottom: 8px;
     }
-    .code-value {
-      font-size: 24px;
-      font-weight: 700;
-      color: #00bcd4;
-      font-family: monospace;
-      letter-spacing: 1px;
-    }
-    .instructions {
+    .state-text {
       font-size: 14px;
-      color: #888;
-      margin-bottom: 24px;
-      line-height: 1.5;
+      color: #8893a7;
+      margin-bottom: 20px;
     }
-    .store-links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    .skeleton {
+      background: linear-gradient(90deg, #1a2540 0%, #233253 50%, #1a2540 100%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      border-radius: 6px;
     }
-    .store-link {
-      display: inline-block;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 16px;
-      transition: opacity 0.2s;
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
     }
-    .store-link:hover { opacity: 0.85; }
-    .store-link.apple {
-      background: #fff;
-      color: #000;
-    }
-    .store-link.google {
-      background: #1a1a1a;
-      border: 1px solid #333;
-      color: #fff;
+    .sk-title  { height: 22px; width: 60%; margin-bottom: 10px; }
+    .sk-handle { height: 15px; width: 45%; margin-bottom: 14px; }
+    .sk-meta   { height: 13px; width: 70%; }
+    .hidden { display: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .skeleton { animation: none; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="logo">Pheid</div>
-
-    <div id="opening">
-      <div class="opening">Opening Pheid...</div>
-      <div class="spinner"></div>
+    <div class="logo">
+      <img src="../icon-192.png" alt="" width="72" height="72">
+      <div class="wordmark">Pheid</div>
     </div>
 
-    <div id="fallback" class="fallback">
-      <div class="code-box">
-        <div class="code-label">Enter this code in the app</div>
-        <div class="code-value" id="code-display"></div>
+    <div id="preview" class="preview-card">
+      <div class="skeleton sk-title"></div>
+      <div class="skeleton sk-handle"></div>
+      <div class="skeleton sk-meta"></div>
+    </div>
+
+    <div id="cta" class="cta-box hidden">
+      <div id="cta-buttons"></div>
+      <a id="open-app" class="cta-secondary" href="#">Already have the app? Open it</a>
+    </div>
+
+    <div class="tagline">
+      One-way broadcasts from people you follow.<br>
+      No group chat. No replies. No noise.
+    </div>
+
+    <div id="state-unavailable" class="hidden">
+      <div class="preview-card state-empty">
+        <div class="state-title">This channel is no longer available</div>
+        <div class="state-text">The link may be out of date, or the owner may have deleted the channel.</div>
       </div>
-      <div class="instructions">
-        Open Pheid and tap "Subscribe with a Code", then enter the code above.
+      <div id="cta-fallback" class="cta-box"></div>
+    </div>
+
+    <div id="state-missing" class="hidden">
+      <div class="preview-card state-empty">
+        <div class="state-title">No code provided</div>
+        <div class="state-text">Download Pheid to get started.</div>
       </div>
-      <div class="store-links">
-        <a href="#" id="apple-link" class="store-link apple">Download on the App Store</a>
-        <a href="https://play.google.com/store/apps/details?id=app.pheid" class="store-link google">Get it on Google Play</a>
-      </div>
+      <div id="cta-nocode" class="cta-box"></div>
     </div>
   </div>
 
   <script>
     (function() {
+      var SUPABASE_URL = 'https://ueyscjalelacncejmsrn.supabase.co';
+      var SUPABASE_ANON_KEY = 'sb_publishable_w8W1dQAVppgYtLG0ySY1Ew_UZBV_2Qx';
+      var APPLE_URL = 'https://apps.apple.com/app/pheid/id6758961971';
+      var GOOGLE_URL = 'https://play.google.com/store/apps/details?id=app.pheid';
+
+      var ua = navigator.userAgent || '';
+      var isIOS = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && 'ontouchend' in document);
+      var isAndroid = /Android/i.test(ua);
+
+      function el(id) { return document.getElementById(id); }
+      function show(id) { el(id).classList.remove('hidden'); }
+      function hide(id) { el(id).classList.add('hidden'); }
+
+      function escapeHtml(s) {
+        return String(s == null ? '' : s)
+          .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+      }
+
+      function storeButtons(containerId) {
+        var host = el(containerId);
+        if (!host) return;
+        var html = '';
+        if (isIOS) {
+          html = '<a class="cta-primary" href="' + APPLE_URL + '">Download on the App Store</a>';
+        } else if (isAndroid) {
+          html = '<a class="cta-primary" href="' + GOOGLE_URL + '">Get it on Google Play</a>';
+        } else {
+          html = '<a class="cta-primary dual" href="' + APPLE_URL + '">Download on the App Store</a>'
+               + '<a class="cta-primary dual" href="' + GOOGLE_URL + '">Get it on Google Play</a>';
+        }
+        host.innerHTML = html;
+      }
+
+      function deepLink(code) {
+        return 'app.pheid://subscribe?code=' + encodeURIComponent(code);
+      }
+
+      function resetLayout() {
+        hide('preview');
+        hide('cta');
+        hide('state-unavailable');
+        hide('state-missing');
+      }
+
+      function showUnavailable() {
+        resetLayout();
+        show('state-unavailable');
+        storeButtons('cta-fallback');
+      }
+
+      function showMissing() {
+        resetLayout();
+        show('state-missing');
+        storeButtons('cta-nocode');
+      }
+
+      function showCtaOnly(code) {
+        hide('preview');
+        storeButtons('cta-buttons');
+        el('open-app').href = deepLink(code);
+        show('cta');
+      }
+
+      function renderPreview(data, code) {
+        var display = data.is_main ? '@' + data.owner_handle : code;
+
+        var subCount = data.subscriber_count || 0;
+        var joinLine = subCount === 0
+          ? 'Be the first to join'
+          : 'Join ' + subCount + ' other' + (subCount === 1 ? '' : 's');
+
+        el('preview').innerHTML =
+          '<div class="channel-name">' + escapeHtml(data.channel_name) + '</div>' +
+          '<div class="channel-handle">' + escapeHtml(display) + '</div>' +
+          '<div class="channel-meta">' +
+            '<span>' + escapeHtml(joinLine) + '</span>' +
+          '</div>';
+
+        storeButtons('cta-buttons');
+        el('open-app').href = deepLink(code);
+        show('cta');
+      }
+
       var params = new URLSearchParams(window.location.search);
       var code = params.get('code');
 
       if (!code) {
-        document.getElementById('opening').style.display = 'none';
-        document.getElementById('fallback').style.display = 'block';
-        document.querySelector('.code-box').style.display = 'none';
-        document.querySelector('.instructions').textContent = 'No code provided. Download Pheid to get started.';
+        showMissing();
         return;
       }
 
-      // Display the code in the fallback section
-      document.getElementById('code-display').textContent = code;
+      var controller = new AbortController();
+      var timeoutId = setTimeout(function() { controller.abort(); }, 8000);
 
-      // Build deep link
-      var deepLink = 'app.pheid://subscribe?code=' + encodeURIComponent(code);
-
-      // Try to open the app
-      var isAndroid = /android/i.test(navigator.userAgent);
-      if (isAndroid) {
-        // Android: use intent URL for better fallback
-        window.location.href = 'intent://subscribe?code=' + encodeURIComponent(code) +
-          '#Intent;scheme=app.pheid;package=app.pheid;end';
-      } else {
-        window.location.href = deepLink;
-      }
-
-      // Track if page becomes hidden (app opened successfully)
-      var appOpened = false;
-      document.addEventListener('visibilitychange', function() {
-        if (document.hidden) appOpened = true;
-      });
-
-      // After timeout, show fallback if app didn't open
-      setTimeout(function() {
-        if (!appOpened) {
-          document.getElementById('opening').style.display = 'none';
-          document.getElementById('fallback').style.display = 'block';
+      fetch(SUPABASE_URL + '/rest/v1/rpc/preview_channel_by_code', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_ANON_KEY
+        },
+        body: JSON.stringify({ p_code: code }),
+        signal: controller.signal
+      })
+      .then(function(res) {
+        if (!res.ok) throw new Error('http ' + res.status);
+        return res.json();
+      })
+      .then(function(data) {
+        if (data && data.success) {
+          renderPreview(data, code);
+        } else {
+          showUnavailable();
         }
-      }, 2500);
+      })
+      .catch(function() {
+        showCtaOnly(code);
+      })
+      .finally(function() {
+        clearTimeout(timeoutId);
+      });
     })();
   </script>
 </body>
