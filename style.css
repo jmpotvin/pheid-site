@@ -422,11 +422,15 @@ footer .footer-copy a:hover {
     row-gap: 0.5rem;
   }
 
+  nav .lang-switch {
+    margin-left: auto;
+  }
+
   nav .links {
     order: 3;
     width: 100%;
     margin-left: 0;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 1.25rem;
     font-size: 0.85rem;
   }
