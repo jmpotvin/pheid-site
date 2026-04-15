@@ -4,7 +4,7 @@ Static marketing site for **Pheid** (pheid.app) — a group notification app by 
 
 ## What is Pheid?
 
-"Group notifications, no group chat." A one-way broadcast notification app for coaches, landlords, teams, and communities. Admins create **channels**, share a code, and subscribers receive push notifications without the ability to reply.
+"Group notifications, no group chat." A one-way broadcast notification app for coaches, landlords, teams, and communities. Every user has a **handle**. Share `@handle` (or `name@handle` for a sub-channel) and anyone who enters it receives your push notifications — focused, one-way broadcasts that land as clear, actionable updates.
 
 The name comes from **Pheidippides**, the ancient Greek messenger who ran from Marathon to Athens.
 
