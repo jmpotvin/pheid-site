@@ -416,18 +416,10 @@ footer .footer-copy a:hover {
 }
 
 /* Responsive */
-@media (max-width: 600px) {
-  nav {
-    padding: 0.875rem 1.25rem;
-  }
-
+@media (max-width: 768px) {
   nav .nav-inner {
     flex-wrap: wrap;
     row-gap: 0.5rem;
-  }
-
-  nav .logo {
-    font-size: 1.05rem;
   }
 
   nav .links {
@@ -437,6 +429,16 @@ footer .footer-copy a:hover {
     justify-content: flex-start;
     gap: 1.25rem;
     font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding: 0.875rem 1.25rem;
+  }
+
+  nav .logo {
+    font-size: 1.05rem;
   }
 
   .logo-pronunciation {
