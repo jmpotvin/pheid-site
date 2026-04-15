@@ -58,6 +58,16 @@ nav .logo {
   font-weight: 700;
   color: var(--ink);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+nav .logo-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: block;
 }
 
 nav .logo:hover {
@@ -164,6 +174,14 @@ li strong {
   padding: 6rem 2rem 5rem;
   max-width: 900px;
   margin: 0 auto;
+}
+
+.hero-logo {
+  display: block;
+  margin: 0 auto 1.5rem;
+  width: 120px;
+  height: 120px;
+  border-radius: 24px;
 }
 
 .hero h1 {
@@ -443,6 +461,17 @@ footer .footer-copy a:hover {
 
   nav .logo {
     font-size: 1.05rem;
+  }
+
+  nav .logo-mark {
+    width: 24px;
+    height: 24px;
+  }
+
+  .hero-logo {
+    width: 96px;
+    height: 96px;
+    border-radius: 20px;
   }
 
   .container {
