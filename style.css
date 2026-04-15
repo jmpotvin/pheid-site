@@ -50,7 +50,7 @@ nav {
 nav .nav-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1.5rem;
 }
 
 nav .logo {
@@ -76,6 +76,7 @@ nav .links {
   display: flex;
   gap: 1.5rem;
   font-size: 0.875rem;
+  margin-left: auto;
 }
 
 nav .links a {
@@ -417,7 +418,29 @@ footer .footer-copy a:hover {
 /* Responsive */
 @media (max-width: 600px) {
   nav {
-    padding: 1.25rem;
+    padding: 0.875rem 1.25rem;
+  }
+
+  nav .nav-inner {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+
+  nav .logo {
+    font-size: 1.05rem;
+  }
+
+  nav .links {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+    gap: 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .logo-pronunciation {
+    display: none;
   }
 
   .container {
