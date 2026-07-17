@@ -53,6 +53,27 @@
       padding: 24px;
       margin-bottom: 20px;
     }
+    .channel-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 600;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    .channel-avatar--purple { background: #4F378B; color: #EADDFF; }
+    .channel-avatar--blue   { background: #0842A0; color: #D3E3FD; }
+    .channel-avatar--green  { background: #344D13; color: #E3F0C1; }
+    .channel-avatar--orange { background: #87350E; color: #FFDBC8; }
+    .channel-avatar--red    { background: #93000A; color: #FFDAD6; }
+    .channel-avatar--teal   { background: #004F50; color: #A8F0F2; }
+    .channel-avatar--pink   { background: #8A0E48; color: #FFD9E2; }
+    .channel-avatar--slate  { background: #40474B; color: #DDE3EA; }
     .channel-name {
       font-size: 22px;
       font-weight: 700;
@@ -248,6 +269,37 @@
         show('cta');
       }
 
+      var CHANNEL_COLOR_TOKENS = ['purple','blue','green','orange','red','teal','pink','slate'];
+
+      function hashToken(str) {
+        var s = String(str || '');
+        var h = 0;
+        for (var i = 0; i < s.length; i++) {
+          h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+        }
+        return CHANNEL_COLOR_TOKENS[Math.abs(h) % CHANNEL_COLOR_TOKENS.length];
+      }
+
+      function renderAvatar(data, code) {
+        var token = data.color_token;
+        if (CHANNEL_COLOR_TOKENS.indexOf(token) === -1) {
+          token = hashToken(data.channel_name || code);
+        }
+        var emoji = data.icon_emoji;
+        var content;
+        if (emoji && String(emoji).length > 0) {
+          content = escapeHtml(emoji);
+        } else if (data.is_main) {
+          content = '@';
+        } else {
+          var handle = data.owner_handle || '';
+          var subPart = code && code.indexOf('@') > 0 ? code.split('@')[0] : '';
+          var ch = subPart || handle || '?';
+          content = escapeHtml(String(ch).charAt(0).toUpperCase());
+        }
+        return '<div class="channel-avatar channel-avatar--' + token + '">' + content + '</div>';
+      }
+
       function renderPreview(data, code) {
         var display = data.is_main ? '@' + data.owner_handle : code;
 
@@ -257,6 +309,7 @@
           : 'Join ' + subCount + ' other' + (subCount === 1 ? '' : 's');
 
         el('preview').innerHTML =
+          renderAvatar(data, code) +
           '<div class="channel-name">' + escapeHtml(data.channel_name) + '</div>' +
           '<div class="channel-handle">' + escapeHtml(display) + '</div>' +
           '<div class="channel-meta">' +

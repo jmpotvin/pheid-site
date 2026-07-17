@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["ZS777CXGKK.app.pheid"],
+        "components": [
+          { "/": "/join" },
+          { "/": "/join/" },
+          { "/": "/fr/join" },
+          { "/": "/fr/join/" }
+        ]
+      }
+    ]
+  }
+}

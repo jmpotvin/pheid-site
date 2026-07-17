@@ -17,6 +17,9 @@ The name comes from **Pheidippides**, the ancient Greek messenger who ran from M
 - `/dmca/index.html` — DMCA Policy
 - `/style.css` — Single shared stylesheet
 - `/CNAME` — GitHub Pages custom domain (pheid.app)
+- `/join/index.html` + `/fr/join/index.html` — channel-preview landing pages (self-contained, inline styles/JS)
+- `/.well-known/apple-app-site-association` + `/.well-known/assetlinks.json` — Universal Links (iOS) / App Links (Android) verification files (added v1.2). **Never move, rename, or add an extension to these**; the paths and content-type expectations are fixed by Apple/Google. The AASA lists `ZS777CXGKK.app.pheid` for `/join` + `/fr/join` (+ trailing-slash variants). assetlinks lists the SHA-256s of all three signing certs (debug, upload, Play App Signing); never commit a placeholder — a malformed fingerprint can void the whole statement. When the Android signing key changes, update assetlinks.json.
+- `/.nojekyll` — REQUIRED: disables GitHub Pages' Jekyll processing, which would otherwise silently exclude the `.well-known/` dot-directory from the published site.
 
 All pages use subdirectory `index.html` for clean URLs.
 
@@ -31,7 +34,7 @@ All pages use subdirectory `index.html` for clean URLs.
 
 ## Conventions
 
-- All pages share the same nav/footer template
+- All pages share the same nav/footer template (EXCEPT the `/join` + `/fr/join` landing pages, which are deliberately self-contained with inline styles/JS)
 - CSS variables defined in `:root` for theming
 - No build tools — plain HTML/CSS
 - Hosted on GitHub Pages

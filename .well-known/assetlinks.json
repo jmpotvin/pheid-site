@@ -1,0 +1,14 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.pheid",
+      "sha256_cert_fingerprints": [
+        "13:29:DD:25:21:AF:2D:31:F7:A3:7A:82:58:6B:BF:BD:0E:EB:25:54:3D:48:B4:06:91:62:4D:A1:3E:EE:A6:6D",
+        "2A:92:28:4F:2D:2B:2E:BF:93:AA:32:01:B8:66:91:8A:D5:7A:BA:A5:F2:9A:65:4D:0D:00:20:22:34:2A:20:36",
+        "BD:AF:D4:9A:42:F9:B3:BD:33:9F:AE:F7:8E:AB:A9:D2:48:0F:25:30:2F:8E:D8:8C:E8:0F:45:62:21:3D:62:4A"
+      ]
+    }
+  }
+]
