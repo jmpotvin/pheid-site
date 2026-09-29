@@ -303,18 +303,22 @@
       function renderPreview(data, code) {
         var display = data.is_main ? '@' + data.owner_handle : code;
 
+        // Same rule as the app (lib/utils/subscriber_count.dart in the pheid
+        // repo): a small count reads as "nobody is here", so below this the
+        // line is left out entirely.
+        var MIN_VISIBLE_SUBSCRIBERS = 10;
         var subCount = data.subscriber_count || 0;
-        var joinLine = subCount === 0
-          ? 'Be the first to join'
-          : 'Join ' + subCount + ' other' + (subCount === 1 ? '' : 's');
+        var meta = subCount >= MIN_VISIBLE_SUBSCRIBERS
+          ? '<div class="channel-meta">' +
+              '<span>' + escapeHtml('Join ' + subCount + ' others') + '</span>' +
+            '</div>'
+          : '';
 
         el('preview').innerHTML =
           renderAvatar(data, code) +
           '<div class="channel-name">' + escapeHtml(data.channel_name) + '</div>' +
           '<div class="channel-handle">' + escapeHtml(display) + '</div>' +
-          '<div class="channel-meta">' +
-            '<span>' + escapeHtml(joinLine) + '</span>' +
-          '</div>';
+          meta;
 
         storeButtons('cta-buttons');
         el('open-app').href = deepLink(code);
