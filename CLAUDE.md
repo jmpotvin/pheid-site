@@ -25,12 +25,21 @@ All pages use subdirectory `index.html` for clean URLs.
 
 ## Design System
 
-- **Theme:** Dark background (`#0b1120`) with light text (`#e8ecf1`)
-- **Accent color:** Cyan/blue (`#38a3d9`)
-- **Font:** DM Sans (Google Fonts), Georgia serif for h1
-- **Layout:** Max-width 900px, centered
-- **Animations:** `.fade-up` with `.delay-1`, `.delay-2`, `.delay-3` stagger classes
-- **Mobile breakpoint:** 600px
+Same visual language as novino.ca (`D:\source\novino\styles.css` is the reference), in the style of linear.app: flat near-black, tight Inter type, grey secondary text, content grouped in 1px-bordered panels.
+
+- **Tokens** (`:root` in `style.css`; `/join` + `/fr/join` repeat the values inline): `--bg #08090a`, `--surface #0f1011`, `--border rgba(255,255,255,0.08)`, `--text #f7f8f8`, `--text-2 #8a8f98` (secondary text), `--text-3 #62666d` (tertiary, © line), `--accent #d0bcff`
+- **Accent:** lavender is the only accent. Use it for link hover, `:focus-visible` outlines (2px) and at most one highlighted element per page (the Pro plan label on the landing page, the Pro column in the support table). No other UI colours; the only exception is the channel avatar colours on `/join`, which mirror the app's channel colours.
+- **Fonts:** Inter 400/500/600 for everything. DM Serif Display is loaded only for the text "Pheid" wordmark (`&text=Pheid` subset).
+- **Type:** headings weight 500; h1 `letter-spacing -0.03em`, line-height 1.05 (hero h1 `clamp(2.75rem, 6vw, 4.5rem)`); h2/h3 `-0.015em`, section h2 1.75rem. Body 16px; secondary text in `--text-2`. Small labels above headings (`.eyebrow`, `.faq-group`, `.toc-title`) are plain text: no uppercase, no letter-spacing.
+- **Panels:** each section is an h2 followed by ONE `.panel` (`--surface`, 1px `--border`, radius 10px, overflow hidden). Grids inside a panel (`.steps`, `.usecases`, `.features`, `.plans`) get their 1px dividers from `gap: 1px` over a `--border` background, so they stack cleanly below 720px. Sections are separated by spacing (~6rem), not rules. FAQ groups are one panel each, with dividers between questions.
+- **Radius:** 10px for panels, 6px for buttons. Nothing else.
+- **Nav:** sticky, `rgba(8,9,10,0.8)` + `backdrop-filter: blur(12px)`, 1px bottom border; logo left, muted text links right, exactly one light button (`.nav-cta`: `#e6e6e6` on `#08090a`, `#fff` on hover).
+- **Footer:** one quiet row with a 1px top border; links in `--text-2`, © in `--text-3` at 0.85rem.
+- **Screenshots:** `/img/*-en.jpg` / `*-fr.jpg` are 540px-wide JPEGs resized from `D:\source\pheid\screenshots\iphone-6.9[-fr]`; regenerate them when the app UI changes. Show them plainly in a 1px `--border` frame (`.phone`).
+- **Store badges:** Apple SVG at 40px. Google's PNG has built-in padding, so `.badge-google` crops it (`overflow:hidden`, radius 6px): EN img 60px tall with `margin:-10px`; FR (`html:lang(fr)`) 52px with `margin:-6px 0`.
+- **Avoid:** gradients, glows, box-shadows, pill chips, hover lift, entrance animations, coloured icon tiles (feature icons are 20px monochrome in `--text-2`).
+- **Layout:** max-width 1040px; legal pages use a sticky table of contents beside a ~68ch column.
+- **Breakpoints:** 900px (legal TOC hidden), 720px (mobile: hero and panel grids stack), 420px (nav drops the Support link).
 
 ## Conventions
 

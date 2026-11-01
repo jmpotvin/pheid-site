@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Support — Pheid</title>
   <meta name="description" content="Get help with Pheid. Contact our support team.">
-  <meta name="theme-color" content="#0b1120">
+  <meta name="theme-color" content="#08090a">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/icon-192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -17,85 +17,227 @@
   <link rel="alternate" hreflang="x-default" href="https://pheid.app/support/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&text=Pheid&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="logo"><img src="/icon-192.png" alt="" class="logo-mark" width="28" height="28">Pheid</a>
+<header class="site-header">
+  <nav class="nav-inner" aria-label="Main">
+    <a href="/" class="logo"><img src="/icon-192.png" alt="" class="logo-mark" width="30" height="30">Pheid</a>
     <div class="links">
-      <a href="/support">Support</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
+      <a href="/#how" class="nav-optional">How it works</a>
+      <a href="/support" aria-current="page">Support</a>
     </div>
-    <a href="/fr/support" class="lang-switch">FR</a>
-  </div>
-</nav>
+    <a href="/fr/support" class="lang-switch" lang="fr" hreflang="fr">FR</a>
+    <a href="/#download" class="nav-cta">Get the app</a>
+  </nav>
+</header>
 
-<div class="container">
-  <h1 class="fade-up">Support</h1>
-  <p class="subtitle fade-up delay-1">We're here to help.</p>
+<main class="container support">
+  <div class="page-head">
+    <h1>Support</h1>
+    <p class="subtitle">We're here to help.</p>
+  </div>
 
   <div class="contact-card">
     <p>For questions, bug reports, or account issues, email us at:</p>
-    <p><a href="mailto:support@pheid.app">support@pheid.app</a></p>
+    <p><a class="contact-email" href="mailto:support@pheid.app">support@pheid.app</a></p>
     <p class="response-time">We typically respond within 1-2 business days.</p>
   </div>
 
   <h2>Frequently Asked Questions</h2>
 
-  <h3>What is Pheid?</h3>
-  <p>Pheid is a group notification app. Every account has a handle. Share your <code>@handle</code> (or <code>name@handle</code> for a sub-channel), and anyone who enters it gets your push notifications. It's focused on one-way broadcasts so your messages always land as clear, actionable updates.</p>
+  <div class="faq">
+    <p class="faq-group">Getting started</p>
 
-  <h3>How do I subscribe to a channel?</h3>
-  <p>Tap the subscribe button on the home screen and enter the handle shared by the channel's owner — <code>@handle</code> for their main channel, or <code>name@handle</code> for a sub-channel. You can also scan their QR code or tap a <code>pheid.app/join</code> link. You'll start receiving notifications immediately.</p>
+    <div class="panel faq-list">
+      <details open>
+        <summary>What is Pheid?</summary>
+        <div class="faq-answer">
+          <p>Pheid is a group notification app. Every account has a handle. Share your <code>@handle</code> (or <code>name@handle</code> for a sub-channel), and anyone who enters it gets your push notifications. It's focused on one-way broadcasts so your messages always land as clear, actionable updates.</p>
+        </div>
+      </details>
 
-  <h3>How do I create a channel?</h3>
-  <p>Your main channel is created automatically with your handle. To create a sub-channel, tap the create button on the home screen, name it, and pick a short sub-code — subscribers join with <code>subcode@yourhandle</code>. Free accounts can create up to 3 sub-channels.</p>
+      <details>
+        <summary>How do I subscribe to a channel?</summary>
+        <div class="faq-answer">
+          <p>Tap the subscribe button on the home screen and enter the handle shared by the channel's owner — <code>@handle</code> for their main channel, or <code>name@handle</code> for a sub-channel. You can also scan their QR code or tap a <code>pheid.app/join</code> link. You'll start receiving notifications immediately.</p>
+        </div>
+      </details>
 
-  <h3>How do people find my channel?</h3>
-  <p>Share your handle any way you like — text, email, poster, business card. The app also gives you a QR code to scan and a <code>pheid.app/join</code> link you can send. All three point to the same channel.</p>
+      <details>
+        <summary>How do I create a channel?</summary>
+        <div class="faq-answer">
+          <p>Your main channel is created automatically with your handle. To create a sub-channel, tap the create button on the home screen, name it, and pick a short sub-code — subscribers join with <code>subcode@yourhandle</code>. Free accounts can create up to 3 sub-channels (your main <code>@handle</code> channel doesn't count); Pro accounts have no limit.</p>
+        </div>
+      </details>
 
-  <h3>Can I schedule messages in advance?</h3>
-  <p>Yes. When composing a message, tap the schedule button to send it later — one-time at a specific date and time, or recurring (daily, weekly, monthly). Schedules are timezone-aware and handle daylight saving transitions automatically.</p>
+      <details>
+        <summary>How do people find my channel?</summary>
+        <div class="faq-answer">
+          <p>Share your handle any way you like — text, email, poster, business card. The app also gives you a QR code to scan and a <code>pheid.app/join</code> link you can send. All three point to the same channel.</p>
+          <p>You can also make a channel public so people can find it by searching in Discover. Listing a channel is free on every plan.</p>
+        </div>
+      </details>
+    </div>
 
-  <h3>Does Pheid support dark mode?</h3>
-  <p>Yes. Pheid follows your system theme by default, and you can force light or dark in Settings.</p>
+    <p class="faq-group">Using Pheid</p>
 
-  <h3>Is subscribing free?</h3>
-  <p>Yes. Subscribing to channels is always free with no limits.</p>
+    <div class="panel faq-list">
+      <details>
+        <summary>Can I schedule messages in advance?</summary>
+        <div class="faq-answer">
+          <p>Yes. When composing a message, tap the schedule button to send it later — one-time at a specific date and time, or recurring (daily, weekly, monthly). Schedules are timezone-aware and handle daylight saving transitions automatically.</p>
+          <p>Free accounts can have up to 3 pending scheduled messages at a time; Pro accounts have no limit. Scheduled messages can't include an attachment.</p>
+        </div>
+      </details>
 
-  <h3>What does Pro include?</h3>
-  <p>Pro gives you unlimited sub-channels and up to 10,000 messages per month (free tier: 3 sub-channels, 100 messages/month). It's available as a monthly ($4.99) or yearly ($49.99) subscription.</p>
+      <details>
+        <summary>Does Pheid support dark mode?</summary>
+        <div class="faq-answer">
+          <p>Yes. Pheid follows your system theme by default, and you can force light or dark in Settings.</p>
+        </div>
+      </details>
 
-  <h3>How do I cancel my subscription?</h3>
-  <p>Subscriptions are managed through your device's app store:</p>
-  <ul>
-    <li><strong>iPhone/iPad:</strong> Settings &gt; your name &gt; Subscriptions &gt; Pheid</li>
-    <li><strong>Android:</strong> Google Play Store &gt; Menu &gt; Subscriptions &gt; Pheid</li>
-  </ul>
-  <p>You'll keep Pro access until the end of your current billing period.</p>
+      <details>
+        <summary>I'm not receiving notifications</summary>
+        <div class="faq-answer">
+          <p>Make sure notifications are enabled for Pheid in your device settings:</p>
+          <ul>
+            <li><strong>iPhone/iPad:</strong> Settings &gt; Notifications &gt; Pheid &gt; Allow Notifications</li>
+            <li><strong>Android:</strong> Settings &gt; Apps &gt; Pheid &gt; Notifications</li>
+          </ul>
+          <p>Some Android manufacturers (Samsung, Xiaomi, Huawei) have aggressive battery optimization that can delay notifications. Check your device's battery settings and exempt Pheid from optimization.</p>
+        </div>
+      </details>
+    </div>
 
-  <h3>How do I delete my account?</h3>
-  <p>Go to Settings in the App and tap "Delete Account." This permanently removes all your data including channels, subscriptions, and messages. This action cannot be undone.</p>
+    <p class="faq-group">Managing a channel</p>
 
-  <h3>I'm not receiving notifications</h3>
-  <p>Make sure notifications are enabled for Pheid in your device settings:</p>
-  <ul>
-    <li><strong>iPhone/iPad:</strong> Settings &gt; Notifications &gt; Pheid &gt; Allow Notifications</li>
-    <li><strong>Android:</strong> Settings &gt; Apps &gt; Pheid &gt; Notifications</li>
-  </ul>
-  <p>Some Android manufacturers (Samsung, Xiaomi, Huawei) have aggressive battery optimization that can delay notifications. Check your device's battery settings and exempt Pheid from optimization.</p>
+    <div class="panel faq-list">
+      <details>
+        <summary>Can someone help me manage my channel?</summary>
+        <div class="faq-answer">
+          <p>Yes. Invite co-admins from <b>Manage admins</b> in the channel's settings. Co-admins can send and schedule messages and manage subscribers. Each channel can have 1 co-admin on the free plan and up to 5 on Pro. An invite expires after 7 days if it isn't accepted.</p>
+          <p>Co-admins work under the channel owner's plan: an admin on a Pro owner's channel gets Pro limits, and the messages they send count toward the owner's monthly quota.</p>
+        </div>
+      </details>
 
-  <h3>I need a refund</h3>
-  <p>Refunds are processed by Apple or Google, not by us directly. Request a refund through:</p>
-  <ul>
-    <li><strong>Apple:</strong> <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a></li>
-    <li><strong>Google Play:</strong> <a href="https://support.google.com/googleplay/answer/2479637">Google Play refund support</a></li>
-  </ul>
-</div>
+      <details>
+        <summary>Can I send a message to only some subscribers?</summary>
+        <div class="faq-answer">
+          <p>Yes, with tags. Create tags such as "U12" or "Building B" and assign them to subscribers. Each channel can have 3 tags on the free plan and 20 on Pro, and assigning tags is free on both.</p>
+          <p>With Pro, you can then send a message only to subscribers with certain tags, right away or scheduled. A targeted message can reach up to 500 subscribers.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I attach a photo or PDF?</summary>
+        <div class="faq-answer">
+          <p>Yes, with Pro. Each message can carry one attachment: an image up to 5&nbsp;MB or a PDF up to 10&nbsp;MB. Pro includes 500&nbsp;MB of attachment storage, shared across all your channels. Attachments can't be added to scheduled messages or templates.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I approve subscribers before they join?</summary>
+        <div class="faq-answer">
+          <p>Yes. Turn on <b>Require approval</b> for a channel and new subscribers wait until you or a co-admin approves them. Approval mode is free on every plan.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I save messages I send often?</summary>
+        <div class="faq-answer">
+          <p>Yes. Save them as templates and reuse them from the composer. The free plan includes 3 templates; Pro has no limit.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I export my subscriber list?</summary>
+        <div class="faq-answer">
+          <p>Yes, with Pro. Export a channel's subscribers as a CSV file with each subscriber's handle, subscription date, admin note and tags. You can export each channel once every 10 minutes.</p>
+        </div>
+      </details>
+    </div>
+
+    <p class="faq-group">Plans and billing</p>
+
+    <div class="panel faq-list">
+      <details>
+        <summary>Is subscribing free?</summary>
+        <div class="faq-answer">
+          <p>Yes. Subscribing to channels is always free with no limits. Subscribers never pay; Pro is only for people who run channels.</p>
+        </div>
+      </details>
+
+      <details id="pro">
+        <summary>What does Pro include?</summary>
+        <div class="faq-answer">
+          <p>Pro raises the limits of the free plan:</p>
+          <div class="plan-table-wrap">
+            <table class="plan-table">
+              <thead>
+                <tr><th scope="col"></th><th scope="col">Free</th><th scope="col">Pro</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Messages per month</th><td>100</td><td>10,000</td></tr>
+                <tr><th scope="row">Sub-channels <span>main <code>@handle</code> channel not counted</span></th><td>3</td><td>Unlimited</td></tr>
+                <tr><th scope="row">Pending scheduled messages</th><td>3</td><td>Unlimited</td></tr>
+                <tr><th scope="row">Message templates</th><td>3</td><td>Unlimited</td></tr>
+                <tr><th scope="row">Subscriber tags per channel</th><td>3</td><td>20</td></tr>
+                <tr><th scope="row">Co-admins per channel</th><td>1</td><td>5</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Pro also adds:</p>
+          <ul>
+            <li><strong>Targeted send:</strong> send to subscribers with certain tags, right away or scheduled, up to 500 recipients per message</li>
+            <li><strong>Subscriber CSV export:</strong> handle, subscription date, admin note and tags, once per channel every 10 minutes</li>
+            <li><strong>Attachments:</strong> one image (up to 5&nbsp;MB) or PDF (up to 10&nbsp;MB) per message, with 500&nbsp;MB of storage</li>
+          </ul>
+          <p>Free on every plan: unlimited subscribers per channel, a public listing in Discover, approval mode, and everything on the subscriber side.</p>
+          <p>On a channel with co-admins, limits follow the channel owner's plan. Pro is available as a monthly ($4.99) or yearly ($49.99) subscription.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I cancel my subscription?</summary>
+        <div class="faq-answer">
+          <p>Subscriptions are managed through your device's app store:</p>
+          <ul>
+            <li><strong>iPhone/iPad:</strong> Settings &gt; your name &gt; Subscriptions &gt; Pheid</li>
+            <li><strong>Android:</strong> Google Play Store &gt; Menu &gt; Subscriptions &gt; Pheid</li>
+          </ul>
+          <p>You'll keep Pro access until the end of your current billing period. After that, nothing is deleted: the free limits apply to anything new you create, and some Pro items are paused. See <a href="/terms#subscriptions-and-payments">Terms of Service, section 5</a> for the details.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>I need a refund</summary>
+        <div class="faq-answer">
+          <p>Refunds are processed by Apple or Google, not by us directly. Request a refund through:</p>
+          <ul>
+            <li><strong>Apple:</strong> <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a></li>
+            <li><strong>Google Play:</strong> <a href="https://support.google.com/googleplay/answer/2479637">Google Play refund support</a></li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <p class="faq-group">Account</p>
+
+    <div class="panel faq-list">
+      <details>
+        <summary>How do I delete my account?</summary>
+        <div class="faq-answer">
+          <p>Go to Settings in the App and tap "Delete Account." This permanently removes all your data including channels, subscriptions, and messages. This action cannot be undone.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</main>
 
 <footer>
   <div class="footer-inner">

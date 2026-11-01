@@ -6,6 +6,7 @@
   <title>Rejoindre sur Pheid</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#08090a">
   <meta property="og:title" content="Rejoindre sur Pheid">
   <meta property="og:description" content="Diffusez à tous vos abonnés, instantanément. Un message suffit, une notification push pour chaque abonné.">
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -17,41 +18,49 @@
   <link rel="alternate" hreflang="fr" href="https://pheid.app/fr/join/">
   <link rel="alternate" hreflang="x-default" href="https://pheid.app/join/">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&text=Pheid&display=swap');
+    /* Same tokens as /style.css: flat near-black, Inter, lavender as the only accent. */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: #0a0a0a;
-      color: #e0e0e0;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 16px;
+      background: #08090a;
+      color: #f7f8f8;
       min-height: 100vh;
       padding: 48px 20px;
+      -webkit-font-smoothing: antialiased;
     }
     .container {
-      max-width: 440px;
+      max-width: 420px;
       margin: 0 auto;
     }
     .logo {
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       margin-bottom: 32px;
     }
     .logo img {
-      width: 72px;
-      height: 72px;
-      border-radius: 16px;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
       display: block;
-      margin: 0 auto 12px;
     }
     .logo .wordmark {
-      font-size: 22px;
-      font-weight: 700;
-      color: #fff;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 28px;
+      line-height: 1;
+      color: #f7f8f8;
     }
     .preview-card {
-      background: #111d33;
-      border: 1px solid #1c2a42;
-      border-radius: 14px;
+      background: #0f1011;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
       padding: 24px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      overflow: hidden;
     }
     .channel-avatar {
       width: 56px;
@@ -60,12 +69,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 30px;
+      font-size: 28px;
       line-height: 1;
-      font-weight: 600;
-      margin-bottom: 16px;
+      font-weight: 500;
+      margin-bottom: 14px;
       overflow: hidden;
     }
+    /* The channel's own colour from the app, kept so the link looks like the channel. */
     .channel-avatar--purple { background: #4F378B; color: #EADDFF; }
     .channel-avatar--blue   { background: #0842A0; color: #D3E3FD; }
     .channel-avatar--green  { background: #344D13; color: #E3F0C1; }
@@ -76,56 +86,66 @@
     .channel-avatar--slate  { background: #40474B; color: #DDE3EA; }
     .channel-name {
       font-size: 22px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 6px;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+      color: #f7f8f8;
+      margin-bottom: 2px;
       word-break: break-word;
     }
     .channel-handle {
-      font-size: 15px;
-      color: #00bcd4;
+      font-size: 14px;
+      color: #8a8f98;
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       word-break: break-all;
     }
     .channel-meta {
-      font-size: 13px;
-      color: #8893a7;
+      font-size: 14px;
+      color: #8a8f98;
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
     }
-    .cta-box { margin-top: 24px; }
+    .cta-box { margin-top: 16px; }
     .cta-primary {
       display: block;
       text-align: center;
-      padding: 14px 20px;
-      background: #00bcd4;
-      color: #000;
-      font-weight: 600;
+      padding: 12px 16px;
+      background: #e6e6e6;
+      color: #08090a;
+      font-weight: 500;
       font-size: 15px;
-      border-radius: 10px;
+      border: 1px solid #e6e6e6;
+      border-radius: 6px;
       text-decoration: none;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
     }
+    .cta-primary:hover { background: #fff; border-color: #fff; color: #08090a; text-decoration: none; }
     .cta-primary.dual + .cta-primary.dual {
-      background: #fff;
+      background: transparent;
+      color: #f7f8f8;
+      border-color: rgba(255, 255, 255, 0.08);
     }
-    .cta-primary:hover { opacity: 0.9; text-decoration: none; color: #000; }
+    .cta-primary.dual + .cta-primary.dual:hover { background: #0f1011; border-color: rgba(255, 255, 255, 0.16); color: #f7f8f8; }
+    .cta-primary:focus-visible,
+    .cta-secondary:focus-visible { outline: 2px solid #d0bcff; outline-offset: 2px; }
     .cta-secondary {
       display: block;
       text-align: center;
-      font-size: 13px;
-      color: #8893a7;
+      font-size: 14px;
+      color: #8a8f98;
       text-decoration: none;
       padding: 12px;
-      margin-top: 4px;
+      margin-top: 2px;
+      border-radius: 6px;
+      transition: color 0.15s;
     }
-    .cta-secondary:hover { color: #00bcd4; text-decoration: underline; }
+    .cta-secondary:hover { color: #d0bcff; text-decoration: none; }
     .tagline {
       text-align: center;
       font-size: 13px;
-      color: #8893a7;
+      color: #62666d;
       line-height: 1.6;
       margin: 28px 12px 0;
     }
@@ -135,24 +155,22 @@
     }
     .state-title {
       font-size: 17px;
-      font-weight: 600;
-      color: #e8ecf1;
+      font-weight: 500;
+      color: #f7f8f8;
       margin-bottom: 8px;
     }
     .state-text {
       font-size: 14px;
-      color: #8893a7;
+      color: #8a8f98;
       margin-bottom: 20px;
     }
     .skeleton {
-      background: linear-gradient(90deg, #1a2540 0%, #233253 50%, #1a2540 100%);
-      background-size: 200% 100%;
-      animation: shimmer 1.4s infinite;
-      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 4px;
+      animation: pulse 1.4s ease-in-out infinite;
     }
-    @keyframes shimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
+    @keyframes pulse {
+      50% { opacity: 0.5; }
     }
     .sk-title  { height: 22px; width: 60%; margin-bottom: 10px; }
     .sk-handle { height: 15px; width: 45%; margin-bottom: 14px; }
@@ -166,7 +184,7 @@
 <body>
   <div class="container">
     <div class="logo">
-      <img src="../../icon-192.png" alt="" width="72" height="72">
+      <img src="../../icon-192.png" alt="" width="36" height="36">
       <div class="wordmark">Pheid</div>
     </div>
 
@@ -181,10 +199,6 @@
       <a id="open-app" class="cta-secondary" href="#">Vous avez déjà l'application ? Ouvrir</a>
     </div>
 
-    <div class="tagline">
-      Diffusez à tous vos abonnés, instantanément.<br>
-      Un message suffit, une notification push pour chaque abonné.
-    </div>
 
     <div id="state-unavailable" class="hidden">
       <div class="preview-card state-empty">
@@ -200,6 +214,11 @@
         <div class="state-text">Téléchargez Pheid et entrez un identifiant pour vous abonner.</div>
       </div>
       <div id="cta-nocode" class="cta-box"></div>
+    </div>
+
+    <div class="tagline">
+      Diffusez à tous vos abonnés, instantanément.<br>
+      Un message suffit, une notification push pour chaque abonné.
     </div>
   </div>
 
@@ -282,11 +301,15 @@
         return CHANNEL_COLOR_TOKENS[Math.abs(h) % CHANNEL_COLOR_TOKENS.length];
       }
 
-      function renderAvatar(data, code) {
+      function resolveToken(data, code) {
         var token = data.color_token;
         if (CHANNEL_COLOR_TOKENS.indexOf(token) === -1) {
           token = hashToken(data.channel_name || code);
         }
+        return token;
+      }
+
+      function renderAvatar(data, code, token) {
         var emoji = data.icon_emoji;
         var content;
         if (emoji && String(emoji).length > 0) {
@@ -316,11 +339,15 @@
             '</div>'
           : '';
 
+        var token = resolveToken(data, code);
+        el('preview').classList.add('has-channel');
         el('preview').innerHTML =
-          renderAvatar(data, code) +
-          '<div class="channel-name">' + escapeHtml(data.channel_name) + '</div>' +
-          '<div class="channel-handle">' + escapeHtml(display) + '</div>' +
-          meta;
+          '<div class="channel-body">' +
+            renderAvatar(data, code, token) +
+            '<div class="channel-name">' + escapeHtml(data.channel_name) + '</div>' +
+            '<div class="channel-handle">' + escapeHtml(display) + '</div>' +
+            meta +
+          '</div>';
 
         storeButtons('cta-buttons');
         el('open-app').href = deepLink(code);

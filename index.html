@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pheid — Broadcast Notifications to Your Group</title>
   <meta name="description" content="Share your handle, broadcast to everyone who subscribes. A one-way notification app for coaches, landlords, teams, and communities.">
-  <meta name="theme-color" content="#0b1120">
+  <meta name="theme-color" content="#08090a">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/icon-192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -22,53 +22,237 @@
   <link rel="alternate" hreflang="x-default" href="https://pheid.app/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&text=Pheid&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="logo"><img src="/icon-192.png" alt="" class="logo-mark" width="28" height="28">Pheid <span class="logo-pronunciation">/feed/</span></a>
+<header class="site-header">
+  <nav class="nav-inner" aria-label="Main">
+    <a href="/" class="logo"><img src="/icon-192.png" alt="" class="logo-mark" width="30" height="30">Pheid <span class="logo-pronunciation">/feed/</span></a>
     <div class="links">
+      <a href="#how" class="nav-optional">How it works</a>
       <a href="/support">Support</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
     </div>
-    <a href="/fr/" class="lang-switch">FR</a>
-  </div>
-</nav>
+    <a href="/fr/" class="lang-switch" lang="fr" hreflang="fr">FR</a>
+    <a href="#download" class="nav-cta">Get the app</a>
+  </nav>
+</header>
 
-<div class="hero">
-  <img src="/icon-512.png" alt="" class="hero-logo fade-up" width="120" height="120">
-  <h1 class="fade-up">Share your handle.<br>Broadcast to your group.</h1>
-  <p class="pronunciation fade-up">Pheid (pronounced <em>/feed/</em>)</p>
-  <p class="fade-up delay-1">Pick a handle, share it with your group, and everyone who subscribes gets your updates instantly. Built for coaches, landlords, teams, and communities who just need to get the word out.</p>
-  <div class="badges fade-up delay-2">
-    <a href="https://apps.apple.com/app/pheid/id6758961971" target="_blank" rel="noopener noreferrer"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store"></a>
-    <a href="https://play.google.com/store/apps/details?id=app.pheid" target="_blank" rel="noopener noreferrer"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
+<main>
+
+<div class="hero-wrap">
+  <div class="hero">
+    <div>
+      <h1>Share your handle.<br>Broadcast to your group.</h1>
+      <p class="pronunciation">Pheid (pronounced <em>/feed/</em>)</p>
+      <p class="lede">Pick a handle, share it with your group, and everyone who subscribes gets your updates instantly. Built for coaches, landlords, teams, and communities who just need to get the word out.</p>
+      <div class="badges">
+        <a href="https://apps.apple.com/app/pheid/id6758961971" target="_blank" rel="noopener noreferrer" class="badge-apple"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" width="120" height="40"></a>
+        <a href="https://play.google.com/store/apps/details?id=app.pheid" target="_blank" rel="noopener noreferrer" class="badge-google"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="phone phone--cropped">
+        <img src="/img/inbox-en.jpg" alt="The Pheid inbox showing recent updates from a coach's Practice, Parents and Announcements channels" width="540" height="800">
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="features">
-  <div class="feature fade-up delay-1">
-    <h3>Subscribe with a handle</h3>
-    <p>Enter <code>@handle</code> to follow someone's main channel, or <code>name@handle</code> for a sub-channel. Subscribers are in instantly.</p>
+<section class="section" id="how" aria-labelledby="how-title">
+  <div class="section-head">
+    <p class="eyebrow">How it works</p>
+    <h2 id="how-title">Three steps from handle to notification</h2>
+    <p>No group chat, no replies to manage, no phone numbers to collect.</p>
   </div>
-  <div class="feature fade-up delay-2">
-    <h3>One message, everyone hears it</h3>
-    <p>Send once; every subscriber gets a push notification. Focused, one-way broadcasts keep your updates clear and easy to act on.</p>
+  <div class="steps panel">
+    <div class="step">
+      <span class="step-num">01</span>
+      <h3>Claim your handle</h3>
+      <p>Your main channel lives at <code>@handle</code>. Add sub-channels for practice, parents or announcements.</p>
+      <div class="phone"><img src="/img/channels-en.jpg" alt="Owner home screen listing a main channel and three sub-channels" width="540" height="640" loading="lazy"></div>
+    </div>
+    <div class="step">
+      <span class="step-num">02</span>
+      <h3>Share it</h3>
+      <p>Send the handle, a <code>pheid.app/join</code> link, or show the QR code. Anyone who enters it is subscribed.</p>
+      <div class="phone"><img src="/img/channel-en.jpg" alt="Channel screen with share and QR code buttons" width="540" height="640" loading="lazy"></div>
+    </div>
+    <div class="step">
+      <span class="step-num">03</span>
+      <h3>Everyone gets the push</h3>
+      <p>Write once. Every subscriber gets a notification, and the message stays in their inbox.</p>
+      <div class="phone"><img src="/img/inbox-en.jpg" alt="Subscriber inbox with recent messages" width="540" height="640" loading="lazy"></div>
+    </div>
   </div>
-  <div class="feature fade-up delay-3">
-    <h3>Schedule ahead</h3>
-    <p>Queue one-off or recurring messages — timezone-aware, perfect for practice reminders, rent notices, and weekly updates.</p>
-  </div>
-</div>
+</section>
 
-<div class="origin fade-up">
-  <h3>Why "Pheid"?</h3>
-  <p>Named after <a href="https://en.wikipedia.org/wiki/Pheidippides" target="_blank" rel="noopener noreferrer">Pheidippides</a>, the ancient Greek messenger who ran from Marathon to Athens to deliver a single, urgent message. Pheid carries that same idea forward. Your group, notified instantly.</p>
-</div>
+<section class="section" aria-labelledby="who-title">
+  <div class="section-head">
+    <p class="eyebrow">Who it's for</p>
+    <h2 id="who-title">Anyone who needs to get the word out</h2>
+  </div>
+  <div class="usecases panel">
+    <div class="usecase">
+      <h3>Coaches</h3>
+      <p>Practice changes, weather calls and game-day reminders, sent to players and parents at once.</p>
+      <div class="msg">
+        <div class="msg-avatar msg-avatar--orange" aria-hidden="true">P</div>
+        <div>
+          <div class="msg-head"><b>Practice</b><span>practice@coachdemo&nbsp;·&nbsp;3h</span></div>
+          <p class="msg-text">If rain continues we will move to the gym. I will confirm by 4pm.</p>
+        </div>
+      </div>
+    </div>
+    <div class="usecase">
+      <h3>Landlords</h3>
+      <p>Maintenance windows, rent reminders and building notices, without collecting every tenant's number.</p>
+      <div class="msg">
+        <div class="msg-avatar msg-avatar--blue" aria-hidden="true">B</div>
+        <div>
+          <div class="msg-head"><b>Building A</b><span>buildinga@maplecourt&nbsp;·&nbsp;1d</span></div>
+          <p class="msg-text">Water will be shut off Tuesday from 9 to 11am for repairs.</p>
+        </div>
+      </div>
+    </div>
+    <div class="usecase">
+      <h3>Teams</h3>
+      <p>Shift changes and schedule updates that land as a notification, not buried in a busy chat.</p>
+      <div class="msg">
+        <div class="msg-avatar msg-avatar--teal" aria-hidden="true">N</div>
+        <div>
+          <div class="msg-head"><b>Night shift</b><span>nights@northdepot&nbsp;·&nbsp;2h</span></div>
+          <p class="msg-text">Inventory count moved to Thursday. Same time, same dock.</p>
+        </div>
+      </div>
+    </div>
+    <div class="usecase">
+      <h3>Communities</h3>
+      <p>Clubs, associations and volunteer groups keeping everyone in the loop with one message.</p>
+      <div class="msg">
+        <div class="msg-avatar msg-avatar--green" aria-hidden="true">G</div>
+        <div>
+          <div class="msg-head"><b>Garden club</b><span>garden@eastend&nbsp;·&nbsp;5h</span></div>
+          <p class="msg-text">Plot sign-ups open Saturday at 9am. First come, first served.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="features-title">
+  <div class="section-head">
+    <p class="eyebrow">Features</p>
+    <h2 id="features-title">Everything a one-way update needs</h2>
+  </div>
+  <div class="features panel">
+    <div class="feature">
+      <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg></div>
+      <h3>Subscribe with a handle</h3>
+      <p>Enter <code>@handle</code> to follow someone's main channel, or <code>name@handle</code> for a sub-channel. Subscribers are in instantly.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.9 19.1a10 10 0 0 1 0-14.2"/><path d="M7.8 16.2a6 6 0 0 1 0-8.4"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8a6 6 0 0 1 0 8.4"/><path d="M19.1 4.9a10 10 0 0 1 0 14.2"/></svg></div>
+      <h3>One message, everyone hears it</h3>
+      <p>Send once; every subscriber gets a push notification. Focused, one-way broadcasts keep your updates clear and easy to act on.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+      <h3>Schedule ahead</h3>
+      <p>Queue one-off or recurring messages — timezone-aware, perfect for practice reminders, rent notices, and weekly updates.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3z"/><path d="M21 14v.01"/><path d="M14 21h.01"/><path d="M17 21h4v-4"/></svg></div>
+      <h3>Share by link or QR code</h3>
+      <p>Every channel has a <code>pheid.app/join</code> link and a QR code. Put it in a text, an email or on a poster.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17v5"/><path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/></svg></div>
+      <h3>Pin what matters</h3>
+      <p>Pin the message people keep asking about so it stays at the top of your channel.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div>
+      <h3>Bookmarks for subscribers</h3>
+      <p>Subscribers save the updates they'll need later, like a schedule or an address, and find them in one tap.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <h3>Co-admins</h3>
+      <p>Invite helpers to send and schedule messages and manage subscribers on your channel, under your plan.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r="1"/></svg></div>
+      <h3>Targeted send <span class="pro-chip">Pro</span></h3>
+      <p>Tag subscribers, then send only to the U12 team or the tenants of building B, right away or scheduled.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></div>
+      <h3>Photos and PDFs <span class="pro-chip">Pro</span></h3>
+      <p>Attach a schedule, a flyer or a notice to a message you send: an image up to 5&nbsp;MB or a PDF up to 10&nbsp;MB.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing" aria-labelledby="pricing-title">
+  <div class="section-head">
+    <p class="eyebrow">Plans</p>
+    <h2 id="pricing-title">Free to start. Pro when you need more.</h2>
+    <p>Plans are for people who run channels. Subscribing is always free.</p>
+  </div>
+  <div class="plans panel">
+    <div class="plan">
+      <h3>Free</h3>
+      <p class="plan-price"><b>$0</b></p>
+      <ul>
+        <li><b>100</b> messages per month</li>
+        <li><b>3</b> sub-channels, plus your main <code>@handle</code></li>
+        <li><b>3</b> pending scheduled messages</li>
+        <li><b>3</b> message templates</li>
+        <li><b>3</b> subscriber tags and <b>1</b> co-admin per channel</li>
+        <li>Unlimited subscribers, Discover listing and approval mode</li>
+      </ul>
+    </div>
+    <div class="plan plan--pro">
+      <h3>Pro</h3>
+      <p class="plan-price"><b>$4.99</b> per month, or $49.99 per year</p>
+      <ul>
+        <li><b>10,000</b> messages per month</li>
+        <li><b>Unlimited</b> sub-channels, scheduled messages and templates</li>
+        <li><b>20</b> subscriber tags and <b>5</b> co-admins per channel</li>
+        <li>Everything in Free</li>
+      </ul>
+      <p class="plan-sub">Pro only</p>
+      <ul>
+        <li>Targeted send to tagged subscribers, up to 500 per message</li>
+        <li>Photo and PDF attachments, with 500&nbsp;MB of storage</li>
+        <li>Subscriber export to CSV</li>
+      </ul>
+    </div>
+  </div>
+  <p class="plans-note">Co-admins use the channel owner's plan. <a href="/support#pro">See every limit in the FAQ</a>.</p>
+</section>
+
+<section class="section origin" aria-labelledby="origin-title">
+  <h2 class="section-title" id="origin-title">Why “Pheid”?</h2>
+  <div class="panel">
+    <blockquote>One runner. One urgent message. Your group, notified instantly.</blockquote>
+    <p>Named after <a href="https://en.wikipedia.org/wiki/Pheidippides" target="_blank" rel="noopener noreferrer">Pheidippides</a>, the ancient Greek messenger who ran from Marathon to Athens to deliver a single, urgent message. Pheid carries that same idea forward.</p>
+  </div>
+</section>
+
+<section class="cta-band" id="download" aria-labelledby="download-title">
+  <h2 id="download-title">Get the word out</h2>
+  <p>Free to download. Subscribing to channels is always free.</p>
+  <div class="badges">
+    <a href="https://apps.apple.com/app/pheid/id6758961971" target="_blank" rel="noopener noreferrer" class="badge-apple"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" width="120" height="40" loading="lazy"></a>
+    <a href="https://play.google.com/store/apps/details?id=app.pheid" target="_blank" rel="noopener noreferrer" class="badge-google"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60" loading="lazy"></a>
+  </div>
+</section>
+
+</main>
 
 <footer>
   <div class="footer-inner">
